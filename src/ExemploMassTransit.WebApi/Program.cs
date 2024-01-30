@@ -1,6 +1,10 @@
+using ExemploMassTransit.Persistence.Contexts;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 
 namespace ExemploMassTransit.WebApi
 {
@@ -8,18 +12,25 @@ namespace ExemploMassTransit.WebApi
     {
         public static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.Console()
+                .CreateLogger();
+
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<ExemploContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("Database")));
+
+            builder.Host.UseSerilog();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            app.UseSerilogRequestLogging();
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -27,10 +38,11 @@ namespace ExemploMassTransit.WebApi
             }
 
             app.UseAuthorization();
-
             app.MapControllers();
 
             app.Run();
+
+            Log.CloseAndFlush();
         }
     }
 }

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ExemploMassTransit.MessageConsumer": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

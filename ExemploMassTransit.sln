@@ -3,9 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploMassTransit.WebApi", "src\ExemploMassTransit.WebApi\ExemploMassTransit.WebApi.csproj", "{FBAE03A1-1B70-4FE0-86D3-B2DCF04E8B09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploMassTransit.WebApi", "src\ExemploMassTransit.WebApi\ExemploMassTransit.WebApi.csproj", "{FBAE03A1-1B70-4FE0-86D3-B2DCF04E8B09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploMassTransit.MessageConsumer", "src\ExemploMassTransit.MessageConsumer\ExemploMassTransit.MessageConsumer.csproj", "{D1A6EA9E-BA9E-40AF-92A0-CA31A6B6EFDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploMassTransit.MessageConsumer", "src\ExemploMassTransit.MessageConsumer\ExemploMassTransit.MessageConsumer.csproj", "{D1A6EA9E-BA9E-40AF-92A0-CA31A6B6EFDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{4CF1838D-D07F-4CB0-8387-A0E27EE9F0F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - External", "1 - External", "{93FDFED2-0DFF-49F3-9912-C8C4C8EE02A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Core", "2 - Core", "{9B7B2DBE-2E19-4B49-8C9D-4349C05B16C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploMassTransit.Domain", "src\ExemploMassTransit.Domain\ExemploMassTransit.Domain.csproj", "{137E6221-A748-4833-A1AD-7DD4D4C5AA01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploMassTransit.Persistence", "src\ExemploMassTransit.Persistence\ExemploMassTransit.Persistence.csproj", "{84D569DE-151B-44E8-BF97-7BB9010D749D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +31,23 @@ Global
 		{D1A6EA9E-BA9E-40AF-92A0-CA31A6B6EFDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1A6EA9E-BA9E-40AF-92A0-CA31A6B6EFDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1A6EA9E-BA9E-40AF-92A0-CA31A6B6EFDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{137E6221-A748-4833-A1AD-7DD4D4C5AA01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137E6221-A748-4833-A1AD-7DD4D4C5AA01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137E6221-A748-4833-A1AD-7DD4D4C5AA01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137E6221-A748-4833-A1AD-7DD4D4C5AA01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D569DE-151B-44E8-BF97-7BB9010D749D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D569DE-151B-44E8-BF97-7BB9010D749D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D569DE-151B-44E8-BF97-7BB9010D749D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D569DE-151B-44E8-BF97-7BB9010D749D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FBAE03A1-1B70-4FE0-86D3-B2DCF04E8B09} = {4CF1838D-D07F-4CB0-8387-A0E27EE9F0F4}
+		{D1A6EA9E-BA9E-40AF-92A0-CA31A6B6EFDF} = {4CF1838D-D07F-4CB0-8387-A0E27EE9F0F4}
+		{137E6221-A748-4833-A1AD-7DD4D4C5AA01} = {9B7B2DBE-2E19-4B49-8C9D-4349C05B16C5}
+		{84D569DE-151B-44E8-BF97-7BB9010D749D} = {93FDFED2-0DFF-49F3-9912-C8C4C8EE02A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75951304-566F-46B8-AA1D-9CF0B64802B7}
